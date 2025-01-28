@@ -1,0 +1,136 @@
+**Abstract:**
+
+This is a technical blog post of **both** an HTML file *and* [.qmd file](src/wine_of_pnw.qmd) hosted on GitHub pages.
+
+# Setup
+
+**Step Up Code:**
+```{r}
+library(tidyverse)
+
+wine <- readRDS(gzcon(url("https://github.com/cd-public/D505/raw/master/dat/wine.rds"))) %>%
+  filter(province=="Oregon" | province=="California" | province=="New York") %>% 
+  mutate(cherry=as.integer(str_detect(description,"[Cc]herry"))) %>% 
+  mutate(lprice=log(price)) %>% 
+  select(lprice, points, cherry, province)
+```
+
+**Explanation:** 
+
+> <span style="color:red;font-weight:bold">TODO</span>: *For the first line, the dataset is being read in from the github link and then it's being piped into so modifications can be made. Then, the dataset is filtered to only include the rows where the providence is Oregon, California, or New York. Then, a new column is created that contains whether "cherry" appears in the description of each row as an integer. Then, a new column, lprice, is created that takes the logarithm of the price in each row. Finally, the lprice, points, cherry, and providence columns are only selected for the table.*
+
+# Multiple Regression
+
+## Linear Models
+
+First run a linear regression model with log of price as the dependent variable and 'points' and 'cherry' as features (variables).
+
+```{r}
+# TODO: hint: m1 <- lm(lprice ~ points + cherry)
+lm1 = lm(lprice ~ points+ cherry, data = wine)
+
+wine %>%
+  mutate(m = predict(lm1)) %>%
+  ggplot() +
+  geom_line(aes(x = points, y = m))
+```
+
+**Explanation:**
+
+> <span style="color:red;font-weight:bold">TODO</span>: *The linear regression is run first by creating a linear model where lprice is dependent on the points and cherry variables. Then, a new column is created in the dataset that uses the linear model to predict the log price given the points and cherry variables. GGplot is added to create the graph and geom_line creates the linear regression line on the graph.*
+
+```{r}
+library(moderndive)
+get_regression_summaries(lm1)
+```
+
+
+> <span style="color:red;font-weight:bold">TODO</span>: *The Root Means Square Error is 0.4687657. This means that the average difference between the model's predicted value and the actual value is 0.4687657. A low RMSE like this means that this model is good for predicting! *
+
+## Interaction Models
+
+Add an interaction between 'points' and 'cherry'. 
+
+```{r}
+# TODO: hint: Check the slides.
+lm2 = lm(lprice ~ points * cherry, data = wine)
+
+get_regression_table(lm2)
+```
+
+> <span style="color:red;font-weight:bold">TODO</span>: *To find the interaction between points and cherry, points and cherry are multiplied instead of added*
+
+
+```{r}
+get_regression_summaries(lm2)
+```
+
+
+> <span style="color:red;font-weight:bold">TODO</span>: *The average distance between the predicted value and the actual value is 0.4685223. Since the RMSE is low, this means that this model is a good predictor. The interaction between points and cherry is a good predictor of lprice.*
+
+### The Interaction Variable
+
+> <span style="color:red;font-weight:bold">TODO</span>: *interpret the coefficient on the interaction variable.* <br>[Explain as you would to a non-technical manager.](https://youtube.com/clip/UgkxY7ohjoimIef6zpPLjgQHqJcJHeZptuVm?feature=shared)
+
+*The coefficient is positive which means that as the effect of points increases on the lprice, the effect on cherry on lprice also increases. As points becomes more effective in predicting price, so does cherry and vice-versa.*
+
+## Applications
+
+Determine which province (Oregon, California, or New York), does the 'cherry' feature in the data affect price most?
+
+```{r}
+# TODO: 
+oregon = wine %>%
+  filter(province == "Oregon")
+
+oregonlm = lm(lprice ~ cherry, data = oregon)
+
+get_regression_table(oregonlm)
+
+
+california = wine %>%
+  filter(province == "California")
+
+californialm = lm(lprice ~ cherry, data = california)
+
+get_regression_table(californialm)
+
+
+newyork = wine %>%
+  filter(province == "New York")
+
+newyorklm = lm(lprice ~ cherry, data = newyork)
+
+get_regression_table(newyorklm)
+```
+
+> <span style="color:red;font-weight:bold">TODO</span>: *In order to compare the effect of the cherry variable on Oregon, California and New York independently, new datasets are created. The wine data set is filtered to each province for each province. A linear model is created for each data set with lprice as the dependent variable and cherry as a feature. Get_regression_table is necessary to retrieve the coefficient. Comparing the coefficients, it seems that the cherry feature has the most affect on Oregon than on California or New York.*
+
+# Scenarios
+
+## On Accuracy
+
+Imagine a model to distinguish New York wines from those in California and Oregon. After a few days of work, you take some measurements and note: "I've achieved 91% accuracy on my model!" 
+
+Should you be impressed? Why or why not?
+
+```{r}
+# TODO: Use simple descriptive statistics from the data to justify your answer.
+```
+
+> <span style="color:red;font-weight:bold">TODO</span>: *Yes, 91% accuracy is impressive. This means that the roots-squared means error is low. The difference between actual points and our predicted points are very small.*
+
+## On Ethics
+
+Why is understanding this vignette important to use machine learning in an ethical manner?
+
+> <span style="color:red;font-weight:bold">TODO</span>: *The wine dataset is a large dataset that we can play around with in order to learn the basics and applications of machine learning. We can create linear models and explore how variables can affect other variables. This is reflective of how data and datasets are in the real world. We must learn that our actions can heavily influence results which can shape decisions and policy. The algorithms we create scale highly and quickly. By learning the vignette, we realize our responsibility to be ethical. *
+
+## Ignorance is no excuse
+Imagine you are working on a model to predict the likelihood that an individual loses their job as the result of the changing federal policy under new presidential administrations. You have a very large dataset with many hundreds of features, but you are worried that including indicators like age, income or gender might pose some ethical problems. When you discuss these concerns with your boss, she tells you to simply drop those features from the model. Does this solve the ethical issue? Why or why not?
+
+> <span style="color:red;font-weight:bold">TODO</span>:
+
+*Unfortunately, dropping the age, income, and gender variables does not solve the ethical issues. It brings up other ethical issues. Age, income and gender are important data variables so omitting them may decrease the accuracy of the model. Our model is not great if there are improvements to be made. At the same time, adding those variables can create problems by giving those with nefarious intentions access to those they can fire next. It comes down to how we use our model but ethical problems arise either way. 
+*
+
