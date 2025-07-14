@@ -6,7 +6,7 @@ description: > # your text below (remove <br> elements if you don't need line br
   Inventor, Analysist, Space Rogue
   <br><br>
   <a href="http://www.linkedin.com/in/endy-zarate-7920191b3">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="height:24px; width:24px;">
   </a> 
   
 remote_theme: pages-themes/minimal@v0.2.0
