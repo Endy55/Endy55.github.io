@@ -4,7 +4,7 @@ I'm an aspiring Data Scientist
 
 ## Projects
 
-[Data Visualization: A Proposal For Increased School Funding](sample_page)
+[Data Visualization: A Proposal For Increased School Funding](/pdf/Final Project .pdf)
 <img src="images/thumb1.png?raw=true"/>
 
 ---
