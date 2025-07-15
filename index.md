@@ -8,7 +8,7 @@ I'm an aspiring Data Scientist
 <img src="images/thumb1.png?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
+[Survival Analysis: A Closer Look at the Longevity of Github Projects](/pdf/Github_Survival_Analysis.pdf)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
