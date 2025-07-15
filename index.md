@@ -20,11 +20,7 @@ Github is a vital part of open source software. Projects created on Github event
 <img src="images/github.jpg?raw=true"/>
 
 ---
-[Project 3 Title](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
 
 ### In Progress
-+ Real Estate Machine Learning:
-+ Oregon County HDI:
++ Real Estate Machine Learning: Can we predict the features that lead properties to be sold quickly on the market?
++ Oregon County HDI: How would Oregon look like if we created a Human Development Index for its counties? Which counties have the best metrics and which are lagging behind?
