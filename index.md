@@ -1,10 +1,10 @@
 ## Hello, I'm Endy!
 
-Lorem ipsum dolor si
+I'm an aspiring Data Scientist 
 
 ## Projects
 
-[Project 1 Title](sample_page)
+[Data Visualization: A Proposal For Increased School Funding](sample_page)
 <img src="images/thumb1.png?raw=true"/>
 
 ---
