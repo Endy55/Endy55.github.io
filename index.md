@@ -1,6 +1,6 @@
 ## Hello, I'm Endy!
 
-I'm an aspiring Data Scientist 
+I'm an aspiring Data Scientist with a background in education. I'm currently in the Willamette University Masters of Data Science program and aim to graduate December 2025. Using my experience in education and non-profit work, I hope to continue serving vulnerable populations in the data science and ethics parts of these particular fields.
 
 ## Projects
 
