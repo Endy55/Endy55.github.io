@@ -17,4 +17,6 @@ I'm an aspiring Data Scientist
 
 ---
 
-[In Progress]
+# In Progress
++ Real Estate Machine Learning:
++ Oregon County HDI:
