@@ -2,6 +2,8 @@
 
 I'm an aspiring Data Scientist with a background in education. I'm currently in the Willamette University Masters of Data Science program and aim to graduate December 2025. Using my experience in education and non-profit work, I hope to continue serving vulnerable populations in the data science and ethics parts of these particular fields.
 
+<a href="pdf/resume_data_scientist.pdf">Resume</a>
+
 ## Projects
 
 [Data Visualization: A Proposal For Increased School Funding](pdf/Final Project .pdf)
