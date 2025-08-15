@@ -20,7 +20,12 @@ Github is a vital part of open source software. Projects created on Github event
 <img src="images/github.jpg?raw=true"/>
 
 ---
+[Real Estate Sale Prices in Oregon: A First-Time Home Buyers' Guide](https://wu-msds-capstones.github.io/capstone-writeup-endy-and-brandon/)
+<br><br>
+The median age of first-time homeowners has been increasing at a rapid rate since COVID. Oregon's real estate market has been fluctuating, leaving buyers confused and out of the loop. Through data engineering and machine learning, my partner and I learned the indicators that determine the final sales price of homes in Oregon!
+<br><br>
+<img src="images/github.jpg?raw=true"/>
+
 
 ### In Progress
-+ **Real Estate Machine Learning:** Can we predict the features that lead properties to be sold quickly on the market?
 + **Oregon County HDI:** How would Oregon look like if we created a Human Development Index for its counties? Which counties have the best metrics and which are lagging behind?
