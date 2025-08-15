@@ -24,7 +24,7 @@ Github is a vital part of open source software. Projects created on Github event
 <br><br>
 The median age of first-time homeowners has been increasing at a rapid rate since COVID. Oregon's real estate market has been fluctuating, leaving buyers confused and out of the loop. Through data engineering and machine learning, my partner and I learned the indicators that determine the final sales price of homes in Oregon!
 <br><br>
-<img src="images/github.jpg?raw=true"/>
+<img src="images/xg_boost_model.png?raw=true"/>
 
 
 ### In Progress
